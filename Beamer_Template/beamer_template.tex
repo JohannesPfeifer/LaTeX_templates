@@ -19,12 +19,13 @@
     minnames=1, %maximum number of authors displayed in citations before using et al.
     datezeros=false, % do not print dates with leading zeros
     date=long, %use long formats for dates
-    isbn=false, %do not show ISBNs
-    url=false, %do not show urls
-    natbib=true, %provide compatibility with Natbib commands
-    backend=bibtex %use bibtex as the backend; backend=biber is more powerful but also harder to install
+    isbn=false,% show no ISBNs in bibliography (applies only if not a mandatory field)
+    url=false,% show no urls in bibliography (applies only if not a mandatory field)
+    doi=false, % show no dois in bibliography (applies only if not a mandatory field)
+    eprint=false, %show no eprint-field in bibliography (applies only if not a mandatory field)
+    backend=biber %use biber as the backend; backend=bibtex is less powerful, but easier to install
     ]{biblatex}
-\addglobalbib{../mybibfile.bib} %define bib-file located one folder higher
+\addbibresource{../mybibfile.bib} %define bib-file located one folder higher
 
 
 \usefonttheme[onlymath]{serif} %set math font to serif ones
@@ -120,7 +121,7 @@
     \begin{figure}[htbp!]
         \begin{minipage}{0.55\linewidth}
             \includegraphics[height=5cm,width=6cm]{smoothedvariances}
-            \caption{Source:  \citet{BornPfeifer2014JME}}
+            \caption{Source:  \textcite{BornPfeifer2014JME}}
         \end{minipage}
         \begin{minipage}{0.4\linewidth}
             \begin{itemize}
@@ -211,7 +212,7 @@
 }
 
 \end{tikzpicture}
-\caption{Source: \citet{BMP2015}}
+\caption{Source: \textcite{BMP2015}}
 \end{figure}
 
 \end{frame}

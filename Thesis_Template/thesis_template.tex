@@ -17,7 +17,7 @@
 \usepackage{epstopdf}           % allows using eps-file with pdflatex
 \usepackage{textcomp}           % adds more symbols
 %\usepackage{indentfirst}       % use if you want to indent first row
-
+\usepackage[hyphens]{url}       % breaks overlong URLs (needs to be before biblatex)
 
 %%%% define the usage of BibLaTeX for citations and bibliographies
 \usepackage[%
@@ -29,13 +29,15 @@ maxnames=4,% maximum number of names printed in citation before et al. is used
 minnames=1,% number of authors displayed if truncation happens
 datezeros=false,% no leading 0 if dates are printed
 date=long,%
-isbn=false,% show no ISBNs
-natbib=true,% enable natbib-compatibility
-url=false,% show no urls
-backend=bibtex %use bibtex as backend
+isbn=false,% show no ISBNs in bibliography (applies only if not a mandatory field)
+url=false,% show no urls in bibliography (applies only if not a mandatory field)
+doi=false, % show no dois in bibliography (applies only if not a mandatory field)
+eprint=false, %show no eprint-field in bibliography (applies only if not a mandatory field)
+backend=biber %use biber as the backend; backend=bibtex is less powerful, but easier to install
 ]{biblatex}
 
-\addglobalbib{../mybibfile} % defines the name of the .bib-file	
+\addbibresource{../mybibfile.bib} % defines the name of the .bib-file	
+
 
 
 \usepackage[pdfpagelabels=true,plainpages=false,pdftex,bookmarksnumbered=false,bookmarksopen=true]{hyperref}%plainpage and pdfpagelabels allows for correct figure links when using different page numberings
@@ -55,6 +57,7 @@ pdfsubject ={Thesis},
 pdfauthor = {Your Name },
 pdfkeywords = {Some keywords}
 pdfcreator={pdfLaTex}}
+
 
 
 \usepackage[%
@@ -121,7 +124,7 @@ acronym,      %creates List of Abbreviations
 This template is provided by Prof. Dr. Johannes Pfeifer, University of Mannheim\\
 Please send comments and suggestions to \href{mailto:pfeifer@uni-mannheim.de}{pfeifer@uni-mannheim.de}\\
 First Version: August 31, 2012\\
-This Version: April 22, 2015\\
+This Version: October 7, 2016\\
 (Please remove this part in your thesis!)
 }
 \end{center}
@@ -192,6 +195,7 @@ For Windows:
    \item A text editor like the free TeXWorks, delivered with your MikTex installation, the free TeXnicCenter (\url{www.texniccenter.org/}) or the commercial WinEdt (\url{http://www.winedt.com/})
    \item Bibtex-GUI: JabRef (\url{http://jabref.sourceforge.net/})
    \item If you are willing to invest, MathType (\url{http://www.dessci.com/en/products/mathtype/default.htm}) is a commercial formula editor similar to the one in MS-Word that allows you to typeset your equations using a GUI and then export your formulas as \LaTeX-code. There is a free 30-day Trial version. In Preferences-> Cut and Copy Preferences, set the Translator to AMSLatex and simply copy your equations into the text editor.
+   \item This file uses Bib\LaTeX\ with \texttt{biber} as its backend. You need to select a corresponding output mode in your \TeX-Editor. See \url{http://tex.stackexchange.com/questions/154751/biblatex-with-biber-configuring-my-editor-to-avoid-undefined-citations} for detailed instructions. Alternatively, you can just change the \texttt{backend=biber} in the preamble to \texttt{backend=bibtex} to rely on Bib\TeX. While this usually works immediately without requiring the user to change anything, \texttt{backend=bibtex} offers less flexibility.
    \item The typical output mode when using \LaTeX is PDF. Thus, you will need a PDF Viewer. While Adobe Reader works, many people prefer using Sumatra (\url{http://blog.kowalczyk.info/software/sumatrapdf/}), which is an easy and quick alternative.
 \end{itemize}
 
@@ -203,7 +207,7 @@ For Windows:
 \subsubsection*{Subsection Heading that has no number and does not appear in the Table of Contents}
 
 
-In \emph{math environments} like the inline math environment started with a \$ sign\footnote{Because the \$ signals the beginning of a math-environment, you must \texttt{\textbackslash\$} to print a dollar sign. Similarly, because the \% sign indicates a comment in \LaTeX, you must use \texttt{\textbackslash\%} to print a percent sign.} you can use the shortcut defined in the preamble to make a regular $\beta$ bold: $\bs \beta$. Important equations you will use later on should be numbered, e.g.\
+In \emph{math environments} like the inline math environment started with a \$ sign\footnote{Because the \$ signals the beginning of a math-environment, you must use \texttt{\textbackslash\$} to print a dollar sign. Similarly, because the \% sign indicates a comment in \LaTeX, you must use \texttt{\textbackslash\%} to print a percent sign.} you can use the shortcut defined in the preamble to make a regular $\beta$ bold: $\bs \beta$. Important equations you will use later on should be numbered, e.g.\
 \begin{equation}\label{eq:ols}
    b = (x'x)x'y \;.
 \end{equation}
@@ -285,7 +289,7 @@ The following code creates two columns and is useful in presentations, where due
 
 
 \section{References and Citations}
-References should be managed using Bib\LaTeX. A good GUI-interface for Windows is JabRef. Download it at \url{http://jabref.sourceforge.net/}. As shown in Figures \ref{fig:Ideas1} and \ref{fig:Ideas2}, you can download the bibliographic information for many economic references from \url{ideas.repec.org} or databases like JSTOR or ScienceDirect. Just copy the Bibtex-key and paste it into Jabref as shown in Figure \ref{fig:jabref}. Try assigning unique and expressive Bibtex-keys, i.e.\ use for example \textit{Smith2006} instead of \textit{Reference1} (or even better \textit{Smith2006Japan}).
+References should be managed using Bib\LaTeX. A good GUI-interface for Windows is JabRef. Download it at \url{http://jabref.sourceforge.net/}. As shown in Figures \ref{fig:Ideas1} and \ref{fig:Ideas2}, you can download the bibliographic information for many economic references from \url{ideas.repec.org} or databases like JSTOR or ScienceDirect. Just copy the Bibtex-key and paste it into Jabref as shown in Figure \ref{fig:jabref}. Try assigning unique and expressive Bib\TeX-keys, i.e.\ use for example \textit{Smith2006} instead of \textit{Reference1} (or even better \textit{Smith2006Japan}).
 
 \begin{figure}[h!] % h! places the float at this place, use t for top, b for bottom, p for page, can be used in combination to define preference ordering
 \includegraphics[scale=0.3]{Ideas}  % scales figure to 35%
@@ -302,12 +306,12 @@ References should be managed using Bib\LaTeX. A good GUI-interface for Windows i
 \caption[Using JabRef]{Klick on the Add-Button (green plus) and paste the copied text to \emph{Bibtex Source}. Do not forget to change the Bibtex-key (the first entry). Here I chose the key \texttt{Smith2006}}\label{fig:jabref}
 \end{figure}
 
-Please use inline citations and not citations in footnotes.\interfootnotelinepenalty=5000\footnote{As you can see, footnotes are placed with the \texttt{\textbackslash footnote{}}-command. Sometimes footnotes can become quite long. In this case, \LaTeX\ automatically distributes the footnote over more than one page. Sometimes this automatic setting does not perform the way it should. You can change the behavior by setting \texttt{\textbackslash interfootnotelinepenalty=x}, where $x$ is an integer from $0$ to $10{,}000$, with 100 being the default. When set to $10{,}000$ \LaTeX\ will not split the footnote. The option \texttt{\textbackslash interfootnotelinepenalty=x} can be both set in the preamble to affect all footnotes or in the text immediately before a footnote. In the latter case, it needs to be set back to its default if you want the command to only affect one footnote.} \interfootnotelinepenalty=100  The \texttt{natbib}-compatibility specified in the preamble provides several cite commands.\footnote{For the original Bib\LaTeX-commands that allow for many more options, see \url{http://mirror.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf}.} The command \texttt{\textbackslash citet\{Smith2006\}}, where \textit{Smith2006} is the Bibtex-Key defined in JabRef, cites the reference with the name: \citet{Smith2006}. The command \texttt{\textbackslash citep\{Smith2006\}} cites the reference in parentheses: \citep{Smith2006}. The command \verb|\citep[Prefix][Suffix]\{Smith2006\}| allows for Prefixes and Suffixes in the parentheses: \citep[see e.g.][pp. 1-4]{Smith2006}. More information can be found at \url{ftp://ftp.tex.ac.uk/tex-archive/macros/latex/contrib/natbib/natnotes.pdf}.\\
+Please use inline citations and not citations in footnotes.\interfootnotelinepenalty=5000\footnote{As you can see, footnotes are placed with the \texttt{\textbackslash footnote{}}-command. Sometimes footnotes can become quite long. In this case, \LaTeX\ automatically distributes the footnote over more than one page. Sometimes this automatic setting does not perform the way it should. You can change the behavior by setting \texttt{\textbackslash interfootnotelinepenalty=x}, where $x$ is an integer from $0$ to $10{,}000$, with 100 being the default. When set to $10{,}000$ \LaTeX\ will not split the footnote. The option \texttt{\textbackslash interfootnotelinepenalty=x} can be both set in the preamble to affect all footnotes or in the text immediately before a footnote. In the latter case, it needs to be set back to its default if you want the command to only affect one footnote.}\interfootnotelinepenalty=100\textsuperscript{,}\footnote{For further Bib\LaTeX-commands that allow for many more options, see \url{http://mirror.ctan.org/macros/latex/contrib/biblatex/doc/biblatex.pdf}.} The command \texttt{\textbackslash textcite\{Smith2006\}}, where \textit{Smith2006} is the Bibtex-Key defined in JabRef, cites the reference with the name: \textcite{Smith2006}. The command \texttt{\textbackslash parencite\{Smith2006\}} cites the reference in parentheses: \parencite{Smith2006}. The command \verb|\parencite[Prefix][Suffix]\{Smith2006\}| allows for Prefixes and Suffixes in the parentheses: \parencite[see e.g.][pp. 1-4]{Smith2006}.\\
 
-Bib\LaTeX automatically shortens multiple citations with the same authors, e.g.\ \citep{SGU2004JET,SGU2004,SGU2009,SGU2011} and provides correct referencing with a,b,etc. Moreover, it takes care of different bibliography requirements of articles like \citet{SGU2004} and books like e.g.\ \citet{SGU2005}.\\
+Bib\LaTeX automatically shortens multiple citations with the same authors, e.g.\ \parencite{SGU2004JET,SGU2004,SGU2009,SGU2011} and provides correct referencing with a,b, etc. Moreover, it takes care of different bibliography requirements of articles like \textcite{SGU2004} and books like e.g.\ \textcite{SGU2005}.\\
 The style of the bibliography is controlled using the \verb|bibstyle|-option. The current document uses the JME-style file.\\
 
-For electronic sources like blog-posts \citep[e.g.\ ][]{Krugman2012}, you should use the \texttt{electronic}-entrytype in JabRef. Unfortunately, you must manually add the \texttt{urldate}-field to the Bib\TeX-source as shown in Figure \ref{fig:jabref_urldate} in order to print out the access date. The correct field format is YYYY-MM-DD.
+For electronic sources like blog-posts \parencite[e.g.\ ][]{Krugman2012}, you should use the \texttt{electronic}-entrytype in JabRef. Unfortunately, you must manually add the \texttt{urldate}-field to the Bib\TeX-source as shown in Figure \ref{fig:jabref_urldate} in order to print out the access date. The correct field format is YYYY-MM-DD.
 
 \begin{figure}[htbp!]
 \includegraphics[width=\ScaleIfNeeded]{Urldate}
