@@ -473,7 +473,7 @@ Dieses Kapitel zeigt Ihnen verschiedene Beispiele für die Funktionalität von \
 
 In \emph{Math-Umgebungen} sowie in der inline Math-Umgebung, die mit einem \$ Zeichen\footnote{Weil \$ den Start einer Math-Umgebung definiert, nutzen Sie \texttt{\textbackslash\$} um ein Dollarzeichen darzustellen. Analog, weil das \% Symbol einen Kommentar definiert, nutzen Sie \texttt{\textbackslash\%} um ein Prozentzeichen darzustellen.} begonnen wird, können Sie den in der Präambel definierten Shortcut nutzen um ein normales $\beta$ fett zu drucken: $\bs \beta$. Wichtige Gleichungen, auf die sich später bezogen wird, sollten mithilfe einer \emph{equation-Umgebung} nummeriert werden, z.B.\
 \begin{equation}\label{eq:ols}
-	b = (x'x)x'y \;.
+	b = (x'x)^{-1}x'y \;.
 \end{equation}
 Beachten Sie auch die Nutzung von \textbackslash\ nach z.B.\ um das Leerzeichen nach dem Punkt Konsistent mit dessen Nutzung als Abkürzungszeichen im Gegensatz zum Satzende zu machen. Beachten Sie auch die Zeichensetzung nach einer Gleichung. Hier generiert \verb|\;.| ein Leerzeichen durch Nutzung von \verb|;| und setzt dann einen Punkt.
 
@@ -485,11 +485,11 @@ Sie können mit Gleichung~\eqref{eq:ols} auf die erste Gleichung mithilfe des ve
 
 Der Befehl \verb|\tag{equationname}| erlaubt es, Gleichungen zu benennen
 \begin{equation}
-	b = (x'x)x'y \tag{OLS Estimator}
+	b = (x'x)^{-1}x'y \tag{OLS Estimator}
 \end{equation}
 oder in Kombination mit \verb|\ref{}| Gleichungsnummern zu wiederholen
 \begin{equation}
-	b = (x'x)x'y \;. \tag{\ref{eq:ols}}
+	b = (x'x)^{-1}x'y \;. \tag{\ref{eq:ols}}
 \end{equation}
 
 Sie können mehrere Gleichungen mithilfe der \texttt{align}-Umgebung und des \&-Symbols ausrichten.

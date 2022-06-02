@@ -220,11 +220,11 @@ You can now refer to the first equation as equation~\eqref{eq:ols} using the def
 
 The command \verb|\tag{equationname}| allows giving explicit names to equations
 \begin{equation}
-   b = (x'x)x'y  \tag{OLS Estimator}
+   b = (x'x)^{-1}x'y  \tag{OLS Estimator}
 \end{equation}
 or in combination with \verb|\ref{}| to repeat equation numbers
 \begin{equation}
-   b = (x'x)x'y \;. \tag{\ref{eq:ols}}
+   b = (x'x)^{-1}x'y \;. \tag{\ref{eq:ols}}
 \end{equation}
 
 You can also align equations using the \texttt{align}-environment and the \& as the tab-character.
