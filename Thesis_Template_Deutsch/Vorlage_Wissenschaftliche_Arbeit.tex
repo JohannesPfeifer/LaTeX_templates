@@ -280,7 +280,7 @@ Der Aufbau der Arbeit sollte wie folgt gestaltet sein
 	\end{itemize}
 \item Literaturverzeichnis	
 \item Soweit notwendig: Appendix, Ergänzende Tabellen und Abbildungen (siehe Vorlage in diesem Dokument)
-\item Eidesstattliche Versicherung
+\item Eigenständigkeitserklärung
 \end{enumerate}
 
 \subsection{Umfang des Textes}
@@ -290,7 +290,7 @@ Für den Umfang des Textes (ohne Inhalts-, Literatur- und andere
 \begin{itemize}
 \item Bachelorarbeit: ca.\ 30 Seiten $\pm 10\%$. Bei Abweichungen hiervor halten Sie bitte Rücksprache.
 
-\item Masterarbeiten: maximal 60 DIN A4-Seiten
+\item Masterarbeiten: ca.\ 45 DIN A4-Seiten.
 \end{itemize}
 
 \subsection{Seitenlayout}
@@ -316,12 +316,13 @@ nach 6pt.\footnote{Fußnoten sollten einzeilig sein und Schriftgröße 10 haben.
    \item Die Gliederungstiefe sollte in der Regel drei Ebenen nicht überschreiten.
    \item Die jeweiligen Überschriften sind ihrer Bedeutung entsprechend durch die verwendete Schriftgröße herauszustellen.
    \item Zwischen Überschriften verschiedener Gliederungsebenen muss sich immer Text befinden, selbst wenn es sich nur um einen Überblick über das Kapitel handelt.
+   \item Es gibt keine unnummerierten Gliederungsebenen.
+   \item Auf einer Gliederungsebene muss es immer mindestens 2 Unterpunkte geben, d.h.\ auf 1.2.1 muss auch ein 1.2.2 folgen.
  \end{itemize}
 
 
 \subsection{Abgabeformat}
-Die fertige Abschlussarbeit ist zu binden. Sie wird in dreifacher Ausführung abgegeben. Bitte legen sie
-eine elektronische Version Ihrer Arbeit auf CD/DVD gebrannt bei. Speichern Sie das Textdokument nach Möglichkeit im PDF-Format. Eventuelle Programme und verwendete Daten um Ihre Ergebnisse zu replizieren, sind ebenfalls auf dem Datenträger zu speichern.
+Die fertige Abschlussarbeit ist zu binden. Sie wird in dreifacher Ausführung abgegeben. Bitte senden Sie mir eine elektronische Version Ihrer Arbeit per Email. Speichern Sie das Textdokument nach Möglichkeit im PDF-Format. %Eventuelle Programme und verwendete Daten um Ihre Ergebnisse zu replizieren, sind ebenfalls auf dem Datenträger zu speichern.
 
 \subsection{Literaturauswahl}
 
@@ -469,7 +470,10 @@ Dieses Kapitel zeigt Ihnen verschiedene Beispiele für die Funktionalität von \
 
 \subsection{Unterkapitel Überschrift} %\subsection beginnt ein neues Unterkapitel
 
-\subsubsection*{Unterkapitel Überschrift ohne Nummerierung und ohne Auflistung im Inhaltsverzeichnis} % * unterbindet Nummerierung und Auflistung im Inhaltsverzeichnis
+Es sollten niemals direkt Gliederungsebenenen ohne Text aufeinanderfolgen. Erklären Sie hier zum Beispiel, was in diesem Unterkapitel passieren wird. Ihre Arbeit sollte auch keine unnummerierten Gliederungsebenen enthalten. Diese sind im vorliegenden Dokument nur zur Illustration der \LaTeX-Funktionalität aufgeführt. Ebenso muss es auf einer Gliederungsebene immer mindestens 2 Unterpunkte geben, d.h.\ es muss -- im Gegensatz zum vorliegenden Dokument -- auch Gliederungspunkte 4.2 und 4.1.2 geben.
+
+\subsubsection{Unterkapitel-Überschrift mit Nummerierung und im Inhaltsverzeichnis}
+\subsubsection*{Unterkapitel-Überschrift ohne Nummerierung und ohne Auflistung im Inhaltsverzeichnis} % * unterbindet Nummerierung und Auflistung im Inhaltsverzeichnis
 
 In \emph{Math-Umgebungen} sowie in der inline Math-Umgebung, die mit einem \$ Zeichen\footnote{Weil \$ den Start einer Math-Umgebung definiert, nutzen Sie \texttt{\textbackslash\$} um ein Dollarzeichen darzustellen. Analog, weil das \% Symbol einen Kommentar definiert, nutzen Sie \texttt{\textbackslash\%} um ein Prozentzeichen darzustellen.} begonnen wird, können Sie den in der Präambel definierten Shortcut nutzen um ein normales $\beta$ fett zu drucken: $\bs \beta$. Wichtige Gleichungen, auf die sich später bezogen wird, sollten mithilfe einer \emph{equation-Umgebung} nummeriert werden, z.B.\
 \begin{equation}\label{eq:ols}
@@ -536,18 +540,18 @@ Mithilfe des in diesem Dokument verwendeten \texttt{enumitem}-Paketes lässt sic
   \item Erster Punkt
 \end{enumerate}
 
-\clearpage
+%\clearpage
 
 
 \section{Die Nutzung von Labels mit \LaTeX}
 
 Sie haben bereits gesehen, dass es möglich ist, Labels in \LaTeX\ zu definieren um auf die mit Label versehenen Objekte (z.B.\ Gleichungen, Abbildungen, Tabellen oder Kapitel) zu verweisen. Es ist nützlich, sinnvolle Beschreibungen für Labels zu verwenden, die zwischen den verschiedenen Objekttypen unterscheiden. Oft wird das Prefix \texttt{eq:} dem Label hinzugefügt, wenn es einer Gleichung zugeordnet ist oder \texttt{fig:} oder \texttt{tab:} für Abbildungen und Tabellen. Also nutzen Sie lieber \verb|\label{eq:ols}| als nur \verb|\label{equation1}|.
 
-\clearpage
+%\clearpage
 
 \section{Abbildungen und Tabellen}
 
-Wichtige Abbildungen und Tabellen sollten im Haupttext plaziert sein. Manchmal führt dies zu Problemen mit sogenannten floats, zum Beispiel dass Abbildungen und Tabellen an Stellen im Dokument plaziert werden, wo sie nicht hingehören.\footnote{Weitere Informationen darüber was floats sind und wie sie das Layout des Dokuments beeinflussen finden sie auf \url{http://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions}.} Sie können versuchen, die Platzierung von floats zu kontrollieren, indem Sie die bevorzugte Positionierung wie direkt im Anschluss an die Umgebung von Abbildung \ref{fig:Ideas1} oder Tabelle \ref{tab:SuppTable1} spezifizieren. Außerdem können Sie ein \verb|\clearpage| an das Ende eines Kapitels stellen um das nächste Kapitel auf einer neuen Seite zu starten und alle bisher nicht platzierten float Objekte vor dem nächsten Kapitel zu platzieren. Alle ergänzenden Abbildungen und Tabllen sollten im Appendix erscheinen, wie z.B.\ Tabelle \ref{tab:SuppTable1}.
+Wichtige Abbildungen und Tabellen sollten im Haupttext platziert sein. Manchmal führt dies zu Problemen mit sogenannten floats, zum Beispiel dass Abbildungen und Tabellen an Stellen im Dokument platziert werden, wo sie nicht hingehören.\footnote{Weitere Informationen darüber was floats sind und wie sie das Layout des Dokuments beeinflussen finden sie auf \url{http://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions}.} Sie können versuchen, die Platzierung von floats zu kontrollieren, indem Sie die bevorzugte Positionierung wie direkt im Anschluss an die Umgebung von Abbildung \ref{fig:Ideas1} oder Tabelle \ref{tab:SuppTable1} spezifizieren. Außerdem können Sie ein \verb|\clearpage| an das Ende eines Kapitels stellen um das nächste Kapitel auf einer neuen Seite zu starten und alle bisher nicht platzierten float Objekte vor dem nächsten Kapitel zu platzieren. Alle ergänzenden Abbildungen und Tabllen sollten im Appendix erscheinen, wie z.B.\ Tabelle \ref{tab:SuppTable1}.
 
 \begin{table}
 \caption[Titel für Inhaltsverzeichnis]{Titel der Tabelle}
