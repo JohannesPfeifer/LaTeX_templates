@@ -21,6 +21,14 @@
   [article,inbook,incollection,inproceedings,patent,thesis,unpublished,techreport,report]
   {title}{\mkbibquote{#1\isdot}}
 
+%https://tex.stackexchange.com/questions/85305/biblatex-chicago-fullcite-flips-first-and-last-name
+\DeclareCiteCommand{\fullcite}
+  {\usebibmacro{prenote}}
+  {\usedriver
+     {}
+     {\thefield{entrytype}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
 
 
 %adds month to printout from incollection

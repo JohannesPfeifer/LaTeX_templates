@@ -1,6 +1,6 @@
 % $Id: JME_sentencecase.bbx,v 1.0c 2012/12/16 $
 
-\ProvidesFile{meinstil.bbx}
+\ProvidesFile{JME_sentencecase.bbx}
 [\abx@bbxid $Id: authoryear.bbx,v 1.4c 2011/05/12 18:28:32 lehman stable $]
 
 \RequireBibliographyStyle{standard}
@@ -21,7 +21,14 @@
   [article,inbook,incollection,inproceedings,patent,thesis,unpublished,techreport,report]
   {title}{\mkbibquote{#1\isdot}}
 
-
+%https://tex.stackexchange.com/questions/85305/biblatex-chicago-fullcite-flips-first-and-last-name
+\DeclareCiteCommand{\fullcite}
+  {\usebibmacro{prenote}}
+  {\usedriver
+     {}
+     {\thefield{entrytype}}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
 
 %adds month to printout from incollection
   \DeclareBibliographyDriver{incollection}{%
