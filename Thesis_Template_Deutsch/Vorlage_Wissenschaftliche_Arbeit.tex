@@ -26,8 +26,8 @@ citestyle=authoryear-comp,%nutzt komprimierte Autor-Jahr Zitation
 bibstyle=JME,% nutzt JME-style;
 maxbibnames=7,% % maximale Anzahl an dargestellten Namen bevor die Akürzung mit "et al." genutzt wird
 minbibnames=1, % Anzahl an genannten Autoren wenn et al. genutzt wird
-maxnames=2,% maximale Anzahl an dargestellten Namen bei Zitationen before et al. genutzt wird
-minnames=1,% Anzahl an genannten Autoren wenn et al. genutzt wird
+maxcitenames=3,% maximale Anzahl an dargestellten Namen bei Zitationen before et al. genutzt wird
+mincitenames=1,% Anzahl an genannten Autoren wenn et al. genutzt wird
 datezeros=false,% keine vorstehende 0 wenn Daten dargestellt werden
 date=long,%
 citetracker=true, %Check ob Zitation schon einmal vorkam
@@ -269,7 +269,7 @@ Der Aufbau der Arbeit sollte wie folgt gestaltet sein
     \end{enumerate}
     vorzustellen. Dieses einführende Kapitel beinhaltet ferner eine
     Übersicht der Arbeit. Daher empfiehlt sich, die Einleitung erst dann zu
-    schreiben oder nochmals grundlegend zu überarbeiten, wenn die Arbeit im Großen und Ganzen schon fertig gestellt ist.
+    schreiben oder nochmals grundlegend zu überarbeiten, wenn die Arbeit im Großen und Ganzen schon fertiggestellt ist.
 	\item Das abschließende Kapitel der Arbeit dient dazu,
     \begin{enumerate}[label=\roman*.]
         \item die Ergebnisse der Arbeit zusammenzufassen,
@@ -304,14 +304,14 @@ Zu verwenden ist:
 \item Drucksatz: Times New Roman/Calibri 12; \LaTeX: 12; Arial 11; Absatzabstand:
 nach 6pt.\footnote{Fußnoten sollten einzeilig sein und Schriftgröße 10 haben. Sie können Übersetzungen, Erläuterungen und Anmerkungen enthalten, die dem Leser eine zusätzliche Information geben, für den fortlaufenden Text jedoch nur eingeschränkt relevant sind. Längere Ausführungen mit Fußnotencharakter gehören meist in den Anhang.}
 \item Abbildungen und Tabellen sind zu nummerieren
-\item Gleichungen sind ebenfalls zu numerieren
+\item Gleichungen sind ebenfalls zu nummerieren
 \item Die Seitennummerierung in arabischen Ziffern sollte mit dem Text beginnen und bis zum Ende fortgeführt werden. Davor sollten römische Ziffern verwendet werden, wobei die Titelseite keine Seitenzahl beinhalten soll.
 \end{itemize}
 
 \subsection{Gliederung und Struktur}
 
 \begin{itemize}
-   \item Bitte wählen Sie expressive und informative Überschriften. Nennen Sie den Hauptteil Ihrer Arbeit z.B.\ nicht ``Hautpteil''.
+   \item Bitte wählen Sie expressive und informative Überschriften. Nennen Sie den Hauptteil Ihrer Arbeit z.B.\ nicht ``Hauptteil''.
    \item Gliederungsebenen wie Kapitel (Sections) und Unterkapitel (Subsections) sind konsekutiv zu nummerieren.
    \item Die Gliederungstiefe sollte in der Regel drei Ebenen nicht überschreiten.
    \item Die jeweiligen Überschriften sind ihrer Bedeutung entsprechend durch die verwendete Schriftgröße herauszustellen.
@@ -453,8 +453,9 @@ ersetzen
 
 Für Windows:
 \begin{itemize} %itemize generiert eine Auflistung mit Stichpunkten
-	\item Miktex (\url{http://miktex.org/}). Installieren Sie Miktex komplett und wählen Sie aus, dass Pakete automatisch ``on the fly'' installiert werden. Damit ist sicher gestellt, dass alle benötigten Pakete vorhanden sein werden.
-	\item Einen text Editor wie TeXWorks (vorhanden in der Miktex installation), TeXnicCenter (\url{www.texniccenter.org/}, kostenlos) oder WinEdt (\url{http://www.winedt.com/}, kostenpflichtig)
+	\item Miktex (\url{http://miktex.org/}). Installieren Sie Miktex komplett und wählen Sie aus, dass Pakete automatisch ``on the fly'' installiert werden. Damit ist sichergestellt, dass alle benötigten Pakete vorhanden sein werden.
+	\item Einen Editor wie TeXWorks (vorhanden in der Miktex-Installation), TeXnicCenter (\url{www.texniccenter.org/}, kostenlos) oder WinEdt (\url{http://www.winedt.com/}, kostenpflichtig)
+	\item Die moderne Option ist \href{https://code.visualstudio.com/}{Visual Studio Code} mit \href{https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop}{LaTeX Workshop} und \href{https://marketplace.visualstudio.com/items?itemName=valentjn.vscode-ltex}{LTeX}. In Zusammenarbeit mit Miktex ist zudem \href{https://strawberryperl.com/}{Perl} erforderlich. Siehe \url{https://github.com/James-Yu/LaTeX-Workshop/wiki/Install}
 	\item Bibtex-GUI: JabRef (\url{http://jabref.sourceforge.net/})
 	\item Optional: MathType (\url{http://www.dessci.com/en/products/mathtype/default.htm}). MathType ist ein kostenpflichtiger Formel-Editor ähnlich zu dem in MS-Word, der Gleichungen setzt und die Gleichungen als \LaTeX-code ausgibt. Es gibt eine kostenlose 30-Tage Probeversion. Unter Preferences -> Cut and Copy Preferences, stellen Sie den Übersetzer auf AMSLatex und kopieren dann einfach Ihre Gleichungen in den Text Editor.
 	 \item Diese Vorlage nutzt Bib\LaTeX\ mit \texttt{biber} als Backend. Sie müssen die passende Outputoption in Ihrem \TeX-Editor auswählen. Auf folgendem Link finden Sie genauere Informationen \url{http://tex.stackexchange.com/questions/154751/biblatex-with-biber-configuring-my-editor-to-avoid-undefined-citations}. Alternativ definieren Sie einfach \texttt{backend=biber} in der Präamble, bzw. \texttt{backend=bibtex} um Bib\TeX\ zu nutzen. Bib\TeX\ funktioniert normalerweise, ohne dass der Nutzer weitere Einstellungen vornimmt, dafür bietet \texttt{backend=bibtex} weniger Flexibilität.
@@ -470,22 +471,22 @@ Dieses Kapitel zeigt Ihnen verschiedene Beispiele für die Funktionalität von \
 
 \subsection{Unterkapitel Überschrift} %\subsection beginnt ein neues Unterkapitel
 
-Es sollten niemals direkt Gliederungsebenenen ohne Text aufeinanderfolgen. Erklären Sie hier zum Beispiel, was in diesem Unterkapitel passieren wird. Ihre Arbeit sollte auch keine unnummerierten Gliederungsebenen enthalten. Diese sind im vorliegenden Dokument nur zur Illustration der \LaTeX-Funktionalität aufgeführt. Ebenso muss es auf einer Gliederungsebene immer mindestens 2 Unterpunkte geben, d.h.\ es muss -- im Gegensatz zum vorliegenden Dokument -- auch Gliederungspunkte 4.2 und 4.1.2 geben.
+Es sollten niemals direkt Gliederungsebenen ohne Text aufeinanderfolgen. Erklären Sie hier zum Beispiel, was in diesem Unterkapitel passieren wird. Ihre Arbeit sollte auch keine unnummerierten Gliederungsebenen enthalten. Diese sind im vorliegenden Dokument nur zur Illustration der \LaTeX-Funktionalität aufgeführt. Ebenso muss es auf einer Gliederungsebene immer mindestens 2 Unterpunkte geben, d.h.\ es muss -- im Gegensatz zum vorliegenden Dokument -- auch Gliederungspunkte 4.2 und 4.1.2 geben.
 
 \subsubsection{Unterkapitel-Überschrift mit Nummerierung und im Inhaltsverzeichnis}
 \subsubsection*{Unterkapitel-Überschrift ohne Nummerierung und ohne Auflistung im Inhaltsverzeichnis} % * unterbindet Nummerierung und Auflistung im Inhaltsverzeichnis
 
-In \emph{Math-Umgebungen} sowie in der inline Math-Umgebung, die mit einem \$ Zeichen\footnote{Weil \$ den Start einer Math-Umgebung definiert, nutzen Sie \texttt{\textbackslash\$} um ein Dollarzeichen darzustellen. Analog, weil das \% Symbol einen Kommentar definiert, nutzen Sie \texttt{\textbackslash\%} um ein Prozentzeichen darzustellen.} begonnen wird, können Sie den in der Präambel definierten Shortcut nutzen um ein normales $\beta$ fett zu drucken: $\bs \beta$. Wichtige Gleichungen, auf die sich später bezogen wird, sollten mithilfe einer \emph{equation-Umgebung} nummeriert werden, z.B.\
+In \emph{Math-Umgebungen} sowie in der inline Math-Umgebung, die mit einem \$ Zeichen\footnote{Weil \$ den Start einer Math-Umgebung definiert, nutzen Sie \texttt{\textbackslash\$} um ein Dollarzeichen darzustellen. Analog, weil das \% Symbol einen Kommentar definiert, nutzen Sie \texttt{\textbackslash\%} um ein Prozentzeichen darzustellen.} begonnen wird, können Sie den in der Präambel definierten Shortcut nutzen, um ein normales $\beta$ fett zu drucken: $\bs \beta$. Wichtige Gleichungen, auf die sich später bezogen wird, sollten mithilfe einer \emph{equation-Umgebung} nummeriert werden, z.B.\
 \begin{equation}\label{eq:ols}
 	b = (x'x)^{-1}x'y \;.
 \end{equation}
-Beachten Sie auch die Nutzung von \textbackslash\ nach z.B.\ um das Leerzeichen nach dem Punkt Konsistent mit dessen Nutzung als Abkürzungszeichen im Gegensatz zum Satzende zu machen. Beachten Sie auch die Zeichensetzung nach einer Gleichung. Hier generiert \verb|\;.| ein Leerzeichen durch Nutzung von \verb|;| und setzt dann einen Punkt.
+Beachten Sie auch die Nutzung von \textbackslash\ nach z.B.\ um das Leerzeichen nach dem Punkt konsistent mit dessen Nutzung als Abkürzungszeichen im Gegensatz zum Satzende zu machen. Beachten Sie auch die Zeichensetzung nach einer Gleichung. Hier generiert \verb|\;.| ein Leerzeichen durch Nutzung von \verb|;| und setzt dann einen Punkt.
 
 Andere, weniger wichtige Gleichungen sollten nicht nummeriert werden, e.g.\
 \begin{equation*}
 	a = 1\;.
 \end{equation*}
-Sie können mit Gleichung~\eqref{eq:ols} auf die erste Gleichung mithilfe des verwendeten Labels verweisen. Mit der selben Syntax können Sie auf Abbildung~\ref{fig:Ideas1} or Abbildung~\ref{fig:Ideas2} verweisen. Die Nutzung von \texttt{eqref} umklammert die Zahl der Referenz. Die Tilde zwischen ``Abbildung'' und ``\verb|\ref{fig:Ideas2}|'' verhindert, dass die Zahl in einer anderen Zeile steht. Analog können Sie auf Tabelle~\ref{tab:Table1} verweisen. Beachten Sie die Nutzung von \textasciigrave\textasciigrave\ und \textquotesingle\textquotesingle\ für korrekte Anführungszeichen.
+Sie können mit Gleichung~\eqref{eq:ols} auf die erste Gleichung mithilfe des verwendeten Labels verweisen. Mit derselben Syntax können Sie auf Abbildung~\ref{fig:Ideas1} oder Abbildung~\ref{fig:Ideas2} verweisen. Die Nutzung von \texttt{eqref} umklammert die Zahl der Referenz. Die Tilde zwischen ``Abbildung'' und ``\verb|\ref{fig:Ideas2}|'' verhindert, dass die Zahl in einer anderen Zeile steht. Analog können Sie auf Tabelle~\ref{tab:Table1} verweisen. Beachten Sie die Nutzung von \textasciigrave\textasciigrave\ und \textquotesingle\textquotesingle\ für korrekte Anführungszeichen.
 
 Der Befehl \verb|\tag{equationname}| erlaubt es, Gleichungen zu benennen
 \begin{equation}
@@ -501,7 +502,7 @@ Sie können mehrere Gleichungen mithilfe der \texttt{align}-Umgebung und des \&-
 	u'(c_t)&= \beta u'(c_{t+1}) \left[\alpha A k_{t+1}^{\alpha-1} +(1-\delta)\right] \label{euler}\\
     c_t &=Ak_t^{\alpha} - k_{t+1} + (1-\delta)k_t \;.\label{ressource}
 \end{align}
-Nutzen Sie \textbf{niemals} die \texttt{eqnarray}-Umgebung! Beachten Sie die Nutzung von \verb|\left[| and \verb|\right]| um Klammern zu generieren, die sich an die Höhe der eingeschlossenen Formel anpassen. Außerdem können Sie eine Gleichung auf mehrere Zeilen aufteilen:
+Nutzen Sie \textbf{niemals} die \texttt{eqnarray}-Umgebung! Beachten Sie die Nutzung von \verb|\left[| und \verb|\right]| um Klammern zu generieren, die sich an die Höhe der eingeschlossenen Formel anpassen. Außerdem können Sie eine Gleichung auf mehrere Zeilen aufteilen:
 \begin{equation}
 	\begin{split}
         c^* + c^* \hat{c}_{t} &= A\left(k^*\right)^{\alpha} + \alpha A \left(k^*\right)^{\alpha-1} k^* \hat{k}_t \\
@@ -518,7 +519,7 @@ Wenn A und B hält, dann hält C.
 Führen Sie hier Ihren Beweis
 \end{proof}
 
-Für weitere Informationen zu mathematischen Ausdrücken, nutzen Sie die AMS-Dokumentation auf \url{http://www.tug.org/texlive/Contents/live/texmf-dist/doc/latex/amsmath/amsldoc.pdf}.
+Für weitere Informationen zu mathematischen Ausdrücken nutzen Sie die AMS-Dokumentation auf \url{http://www.tug.org/texlive/Contents/live/texmf-dist/doc/latex/amsmath/amsldoc.pdf}.
 
 \subsubsection*{Listenumgebungen}
 
@@ -532,7 +533,7 @@ Mit der \texttt{enumerate}-Umgebung erstellen Sie nummerierte Listen:
   \item Erster Punkt
 \end{enumerate}
 
-Mithilfe des in diesem Dokument verwendeten \texttt{enumitem}-Paketes lässt sich auch die Zählweise sehr einfach anpassen. Die römische Aufzählung in Abschnitt \ref{subsec:aufbau} wurde zum Beispiel erstellt mit
+Mithilfe des in diesem Dokument verwendeten \texttt{enumitem}-Pakets lässt sich auch die Zählweise sehr einfach anpassen. Die römische Aufzählung in Abschnitt \ref{subsec:aufbau} wurde zum Beispiel erstellt mit
 \verb|\begin\{enumerate\}[label=\roman*.]|
 
 \verb|[label=(\alph*)]| erzeugt
@@ -551,7 +552,7 @@ Sie haben bereits gesehen, dass es möglich ist, Labels in \LaTeX\ zu definieren
 
 \section{Abbildungen und Tabellen}
 
-Wichtige Abbildungen und Tabellen sollten im Haupttext platziert sein. Manchmal führt dies zu Problemen mit sogenannten floats, zum Beispiel dass Abbildungen und Tabellen an Stellen im Dokument platziert werden, wo sie nicht hingehören.\footnote{Weitere Informationen darüber was floats sind und wie sie das Layout des Dokuments beeinflussen finden sie auf \url{http://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions}.} Sie können versuchen, die Platzierung von floats zu kontrollieren, indem Sie die bevorzugte Positionierung wie direkt im Anschluss an die Umgebung von Abbildung \ref{fig:Ideas1} oder Tabelle \ref{tab:SuppTable1} spezifizieren. Außerdem können Sie ein \verb|\clearpage| an das Ende eines Kapitels stellen um das nächste Kapitel auf einer neuen Seite zu starten und alle bisher nicht platzierten float Objekte vor dem nächsten Kapitel zu platzieren. Alle ergänzenden Abbildungen und Tabllen sollten im Appendix erscheinen, wie z.B.\ Tabelle \ref{tab:SuppTable1}.
+Wichtige Abbildungen und Tabellen sollten im Haupttext platziert sein. Manchmal führt dies zu Problemen mit sogenannten floats, zum Beispiel, dass Abbildungen und Tabellen an Stellen im Dokument platziert werden, wo sie nicht hingehören.\footnote{Weitere Informationen darüber was floats sind und wie sie das Layout des Dokuments beeinflussen finden sie auf \url{http://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions}.} Sie können versuchen, die Platzierung von floats zu kontrollieren, indem Sie die bevorzugte Positionierung wie direkt im Anschluss an die Umgebung von Abbildung \ref{fig:Ideas1} oder Tabelle \ref{tab:SuppTable1} spezifizieren. Außerdem können Sie ein \verb|\clearpage| an das Ende eines Kapitels stellen, um das nächste Kapitel auf einer neuen Seite zu starten und alle bisher nicht platzierten float Objekte vor dem nächsten Kapitel zu platzieren. Alle ergänzenden Abbildungen und Tabellen sollten im Appendix erscheinen, wie z.B.\ Tabelle \ref{tab:SuppTable1}.
 
 \begin{table}
 \caption[Titel für Inhaltsverzeichnis]{Titel der Tabelle}
@@ -569,9 +570,9 @@ Wichtige Abbildungen und Tabellen sollten im Haupttext platziert sein. Manchmal 
 \caption*{\footnotesize{\emph{Notes:} Fügen Sie hier eine Beschreibung hinzu}} %\caption* kreiert eine Titelbeschriftung, die nicht im Inhaltsverzeichnis auftaucht
 \end{table}
 
-Alle Tabellen und Abbildungen sollten ausreichend beschrieben sein, sodass sie ohne den Haupttext verständlich sind. Nutzen Sie die \verb|\caption| und \verb|\caption*| Befehle. Beachten Sie dass \verb|\label| immer nach dem \verb|\caption| Befehl stehen muss, da \LaTeX\ sonst die Referenz nicht findet.
+Alle Tabellen und Abbildungen sollten ausreichend beschrieben sein, sodass sie ohne den Haupttext verständlich sind. Nutzen Sie die \verb|\caption| und \verb|\caption*| Befehle. Beachten Sie, dass \verb|\label| immer nach dem \verb|\caption| Befehl stehen muss, da \LaTeX\ sonst die Referenz nicht findet.
 
-Wenn Sie sehr große Tabellen haben möchten, wird \LaTeX\ schnell sehr unpraktisch. Allerdings gibt es sehr gute Konverter wie Excel2Latex (\url{http://www.ctan.org/tex-archive/support/excel2latex/}) die dies erleichtern. Wenn Sie Tabellen erstellen, halten Sie diese professionell und nutzen Sie keine vertikalen Linien. Nutzen Sie lieber das \texttt{booktabs} Paket (nähere Informationen: \url{http://www.ctan.org/tex-archive/macros/latex/contrib/booktabs/}) und die booktabs Option in Excel2Latex. Für weitere Informationen zu Tabellen im Allgemeinen und besonders zu professionellen Tabellen besuchen Sie \url{http://en.wikibooks.org/wiki/LaTeX/Tables}.
+Wenn Sie sehr große Tabellen haben möchten, wird \LaTeX\ schnell sehr unpraktisch. Allerdings gibt es sehr gute Konverter wie Excel2Latex (\url{http://www.ctan.org/tex-archive/support/excel2latex/}) die dies erleichtern. Wenn Sie Tabellen erstellen, halten Sie diese professionell und nutzen Sie keine vertikalen Linien. Nutzen Sie lieber das \texttt{booktabs} Paket (nähere Informationen: \url{http://www.ctan.org/tex-archive/macros/latex/contrib/booktabs/}) und die \texttt{booktabs} Option in Excel2Latex. Für weitere Informationen zu Tabellen im Allgemeinen und besonders zu professionellen Tabellen besuchen Sie \url{http://en.wikibooks.org/wiki/LaTeX/Tables}.
 
 Der folgende Code kreiert zwei Spalten und ist nützlich für Präsentationen, wo aufgrund des Querformats manchmal Text links oder rechts neben einer Abbildung erscheinen soll. Vermeiden Sie die Nutzung von folgendem Code in Dokumenten im Hochformat. Beachten Sie, dass der Befehl \verb|\caption| fehlt, sodass die Abbildung nicht im Abbildungsverzeichnis auftaucht.
 
@@ -612,7 +613,7 @@ Bitte zitieren Sie im Text und nicht in Fußnoten.\interfootnotelinepenalty=5000
 
 \begin{figure}[t]
 \includegraphics[width=\ScaleIfNeeded]{JabrefDOI}
-\caption[Nutzung von DOIs in JabRef]{Klicken Sie auf den Add-Button (grünes Plus) und tragen Sie den Digital Object Identifier (DOI) eines Artikeln ein, um einen entsprechenden Eintrag hinzuzufügen.}\label{fig:jabref_doi}
+\caption[Nutzung von DOIs in JabRef]{Klicken Sie auf den Add-Button (grünes Plus) und tragen Sie den Digital Object Identifier (DOI) eines Artikels ein, um einen entsprechenden Eintrag hinzuzufügen.}\label{fig:jabref_doi}
 \end{figure}
 Bib\LaTeX verkürzt automatisch wiederholte Zitationen des gleichen Autors, z.B.\ \parencite{SGU2004JET,SGU2004,SGU2009,SGU2011} und liefert korrekte Referenzen mit a,b, etc. Außerdem erfüllt es verschiedene bibliographische Anforderungen von Zeitschriftenartikeln wie \textcite{SGU2004} und Büchern wie z.B.\ \textcite{SGU2005}.\\
 Seitenbereiche wie \textcite[][99\psq]{Gali2015book} und \textcite[][99\psqq]{Gali2015book} werden mit den Befehlen \texttt{\textbackslash psq} und \texttt{\textbackslash psqq} eingefügt, z.B.\ \texttt{\textbackslash textcite[][99\textbackslash psqq]\{Gali2015book\}} erzeugt \textcite[][99\psqq]{Gali2015book}. Beachten Sie, dass Sie nur die Seitenzahl 99 angeben und nicht auch ``S.''. Dies stellt sicher, dass Bib\LaTeX\ automatisch ``p.'' verwendet, wenn Sie die Sprache des Dokumentes über \texttt{babel} auf Englisch ändern.
@@ -630,7 +631,7 @@ Sie können Bib\TeX-Einträge auch aus Google Scholar exportieren. Jedoch ist di
 \caption[Google Scholar]{Um Bib\TeX-Einträge aus Google Scholar zu exportieren, müssen Sie dieses Feature in den Einstellungen aktivieren.}\label{fig:scholar}
 \end{figure}
 
-Für elektronische Quellen wie Blog-Einträge \parencite[e.g.\ ][]{Krugman2012} sollten Sie den Typ \texttt{electronic} in JabRef verwenden. Leider müssen Sie manuell das \texttt{urldate}-Feld der Bib\TeX-source hinzufügen um das Besuchsdatum anzuzeigen, wie in Abbildung \ref{fig:jabref_urldate} gezeigt. Das Datenformat ist JJJJ-MM-TT.
+Für elektronische Quellen wie Blog-Einträge \parencite[e.g.\ ][]{Krugman2012} sollten Sie den Typ \texttt{electronic} in JabRef verwenden. Leider müssen Sie manuell das \texttt{urldate}-Feld der Bib\TeX-source hinzufügen, um das Besuchsdatum anzuzeigen, wie in Abbildung \ref{fig:jabref_urldate} gezeigt. Das Datenformat ist JJJJ-MM-TT.
 
 \begin{figure}[t!]
 \includegraphics[width=\ScaleIfNeeded]{Urldate}
@@ -665,7 +666,7 @@ Der folgende Befehl gibt das Symbolverzeichnis aus\\
 \verb|\printglossary[type=symbolslist,style=long,title=List of Symbols]|.
 
 \subsection{Definieren und nutzen von Verzeichniseinträgen}
-Die Einträge der Glossare können entweder in der Präamble oder im Haupttext definiert werden. Zum Beispiel definiert der Befehl\\
+Die Einträge der Glossare können entweder in der Präambel oder im Haupttext definiert werden. Zum Beispiel definiert der Befehl\\
 \verb|newglossaryentry{symb:pi}{name={\ensuremath{\pi}}...|\\
 in der Präambel dieses Dokuments einen Eintrag für das Glossar \texttt{symbolslist}. Allerdings erscheint das Symbol \gls{symb:pi} nicht im Symbolverzeichnis, wenn es im Text nicht genutzt wird. Normalerweise geschieht dies durch einen Verweis mithilfe des \verb|\gls{}|-Befehls. Zum Beispiel gibt \verb|\gls{symb:pi}| \gls{symb:pi} aus. Dieser Befehl kann auch folgendermaßen in Gleichungen genutzt werden
 
@@ -678,7 +679,7 @@ in der Präambel dieses Dokuments einen Eintrag für das Glossar \texttt{symbols
 
 Sie können Symbole und Abkürzungen auch im Haupttext definieren, z.B.\ indem Sie\\
 \verb|\newacronym{acro:DSGE}{DSGE}{Dynamic Stochastic General Equilibrium}|\\
-an den Anfang oder das Ende eines Abschnittes stellen, in welchem Sie die Abkürzung zum ersten mal benutzten. Anschließend können Sie die Abkürzung mit \verb|\gls{}| nutzen, z.B.\ \verb|\gls{acro:DSGE}|. Beim ersten Aufrufen einer Abkürzung gibt \LaTeX\ automatisch die lange Version gefolgt von der Abkürzung aus. Ab dem zweiten mal wird nurnoch die Abkürzung ausgegeben. Zum Beispiel wird \gls{acro:DSGE} von nun an mit \gls{acro:DSGE} abgekürzt. Außerdem werden alle Symbole und Abkürzungen, die mit \verb|\gls{}| aufgerufen werden, dem entsprechenden Verzeichnis hinzugefügt.\\
+an den Anfang oder das Ende eines Abschnittes stellen, in welchem Sie die Abkürzung zum ersten Mal benutzten. Anschließend können Sie die Abkürzung mit \verb|\gls{}| nutzen, z.B.\ \verb|\gls{acro:DSGE}|. Beim ersten Aufrufen einer Abkürzung gibt \LaTeX\ automatisch die lange Version gefolgt von der Abkürzung aus. Ab dem zweiten Mal wird nur noch die Abkürzung ausgegeben. Zum Beispiel wird \gls{acro:DSGE} von nun an mit \gls{acro:DSGE} abgekürzt. Außerdem werden alle Symbole und Abkürzungen, die mit \verb|\gls{}| aufgerufen werden, dem entsprechenden Verzeichnis hinzugefügt.\\
 \textbf{Um Glossare korrekt zu aktualisieren müssen Sie \LaTeX\ normalerweise mindestens zwei mal ausführen.}\\
 
 Wenn Sie nicht alle Möglichkeiten von glossaries ausschöpfen möchten, können Sie das Symbol oder die Abkürzung, die Sie benötigen, auch einfach in der Präambel definieren und sie dem entsprechenden Verzeichnis mithilfe von \verb|\glsadd{}| nach der Definition zuordnen (wie hier geschehen mit \verb|\glsadd{OLS}|). Der große Nachteil hierbei ist, dass manuell dafür gesorgt werden muss, dass nur Abkürzungen und Symbole in den Verzeichnissen auftauchen, die auch im Text vorkommen.
@@ -693,7 +694,7 @@ Wenn Sie nicht alle Möglichkeiten von glossaries ausschöpfen möchten, können
 	\item Fast jede erdenkliche \LaTeX-Frage wurde schonmal gefragt. Nutzen Sie Google oder durchsuchen Sie die FAQ auf \url{https://texfaq.org/}
 	\item Es gibt fatale \LaTeX\ Fehler, die Sie niemals machen sollten, Siehe \url{https://ctan.org/tex-archive/info/l2tabu/german?lang=de}.
 	\item Viel hilfreiches finden Sie auf \url{http://en.wikibooks.org/wiki/LaTeX/}.
-	\item Für Präsentationen können Sie \LaTeX\ Beamer nutzen, Siehe \url{ftp://ftp.fu-berlin.de/tex/CTAN/macros/latex/contrib/beamer/doc/beameruserguide.pdf}.
+	\item Für Präsentationen können Sie \LaTeX\ Beamer nutzen, siehe \url{ftp://ftp.fu-berlin.de/tex/CTAN/macros/latex/contrib/beamer/doc/beameruserguide.pdf}.
 \end{itemize}
 
 %_________________ Ende des Haupttexts_________________%
@@ -746,7 +747,7 @@ Informationen präsentiert im Appendix.
 
 \clearpage
 
-\section{Eidesstattliche Versicherung/Affidavit}
+\section{Eigenständigkeitserklärung}
 
 Hiermit versichere ich, dass ich die vorliegende Arbeit selbständig und ohne fremde Hilfe verfasst, die Zitate ordnungsgemäß gekennzeichnet habe und keine anderen, als die im Literatur/Schriftenverzeichnis angegebenen Quellen und Hilfsmittel benutzt wurden.
 
